@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recent Moos</title>
+</head>
+
+<body>
+    <button><a href="/">Home</a></button>
+    <button><a href="/history/">Recent Moos</a></button>
+    <br>
+    {% if cowsay_list %}
+    <h4>Most Recent Moos:</h4>
+    {%for name in cowsay_list%}
+    <div style="float: left;">
+        <fieldset>
+            <legend>Moo #{{ forloop.counter }}</legend>
+            <pre>
+                {{ name}}
+            </pre>
+        </fieldset>
+    </div>
+
+    {%endfor%}
+    {% else %}
+    <h5>No data found</h5>
+    {% endif %}
+
+</body>
+
+</html>
